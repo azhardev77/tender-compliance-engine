@@ -125,11 +125,30 @@ class TenderIngestionControllerTest {
 
         String id = extractField(result, "id");
 
-        mvc.perform(get("/api/tenders/" + id + "/status"))
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$.id").value(id))
-                .andExpect(jsonPath("$.fileName").value("status-test.pdf"))
-                .andExpect(jsonPath("$.docType").value("MAIN_TENDER"));
+        long deadline = System.currentTimeMillis() + 5000;
+        String processingStatus = "";
+        MvcResult statusResult = null;
+
+        while (System.currentTimeMillis() < deadline) {
+            statusResult = mvc.perform(get("/api/tenders/" + id + "/status"))
+                    .andExpect(status().isOk())
+                    .andReturn();
+            processingStatus = extractField(statusResult, "status");
+            if ("COMPLETED".equals(processingStatus)) {
+                break;
+            }
+            Thread.sleep(100);
+        }
+
+        assertThat(processingStatus).isEqualTo("COMPLETED");
+
+        JsonNode statusJson = objectMapper.readTree(statusResult.getResponse().getContentAsString());
+        assertThat(statusJson.get("id").asText()).isEqualTo(id);
+        assertThat(statusJson.get("fileName").asText()).isEqualTo("status-test.pdf");
+        assertThat(statusJson.get("docType").asText()).isEqualTo("MAIN_TENDER");
+        assertThat(statusJson.get("status").asText()).isEqualTo("COMPLETED");
+        assertThat(statusJson.get("pageCount").asInt()).isEqualTo(1);
+        assertThat(statusJson.get("processingDurationMs").asLong()).isGreaterThanOrEqualTo(0L);
     }
 
     private String extractField(MvcResult result, String field) throws Exception {

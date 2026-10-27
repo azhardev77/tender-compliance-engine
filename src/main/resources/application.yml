@@ -34,11 +34,10 @@ tender:
     prompt-version: "v1.0"
   ai:
     provider: ${MODEL_PROVIDER:mock}   # 'meta' for live calls, 'mock' for fixture replay
-    # Placeholders: confirm base URL and SAM model id against the official Meta Model API docs.
     base-url: ${META_API_BASE_URL:https://api.meta.ai/v1}
     api-key: ${META_API_KEY:replace-me}
     muse-spark-model: ${MUSE_SPARK_MODEL:muse-spark-1.3}
-    sam-model: ${SAM_MODEL:CONFIRM_FROM_META_DOCS}
+    sam-model: ${SAM_MODEL:sam-3-1}
     connect-timeout-ms: 5000
     read-timeout-ms: 90000
 

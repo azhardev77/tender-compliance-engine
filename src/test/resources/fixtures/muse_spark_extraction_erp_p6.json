@@ -1,15 +1,21 @@
 {
   "id": "chatcmpl-spark-erp-p6",
   "object": "chat.completion",
+  "created": 1793100532,
   "model": "muse-spark-1.3",
   "choices": [
     {
       "index": 0,
       "message": {
         "role": "assistant",
-        "content": "{\"tender_id\":\"ERP-PROC-2026-08\",\"page_number\":6,\"extracted_clauses\":[{\"clause_code\":\"FIN_TURNOVER\",\"clause_title\":\"Minimum Annual Turnover\",\"text_verbatim\":\"The bidder must have an average annual financial turnover of at least INR 5.00 Crores over the last 3 financial years.\",\"standard_category\":\"FINANCIAL_TURNOVER\",\"comparator\":\"MIN_REQUIRED\",\"numeric_threshold\":5.00,\"unit\":\"INR_CRORE\"},{\"clause_code\":\"EMD_REQ\",\"clause_title\":\"Earnest Money Deposit\",\"text_verbatim\":\"Earnest Money Deposit (EMD) of INR 4.50 Lakhs shall be submitted via BG/DD.\",\"standard_category\":\"EARNEST_MONEY_DEPOSIT\",\"comparator\":\"MAX_ALLOWED\",\"numeric_threshold\":4.50,\"unit\":\"INR_LAKH\"},{\"clause_code\":\"EXP_GOV\",\"clause_title\":\"Government PSU Experience\",\"text_verbatim\":\"Bidder must possess at least 3 years of prior experience in implementing enterprise ERP solutions for Central/State Government PSUs.\",\"standard_category\":\"PAST_EXPERIENCE\",\"comparator\":\"MIN_REQUIRED\",\"numeric_threshold\":3.00,\"unit\":\"YEARS\"},{\"clause_code\":\"ISO_QUALITY\",\"clause_title\":\"Quality Standards Certification\",\"text_verbatim\":\"Bidder must hold valid ISO 9001:2015 and ISO/IEC 27001:2022 certifications as on bid submission date.\",\"standard_category\":\"ISO_CERTIFICATION\",\"comparator\":\"REQUIRED_SET\",\"numeric_threshold\":null,\"unit\":\"BOOLEAN\"}]}"
+        "content": "{\"tender_id\": \"ERP-PROC-2026-08\", \"page_number\": 6, \"clauses\": [{\"clauseType\": \"FINANCIAL_TURNOVER\", \"comparator\": \"MIN_REQUIRED\", \"rawValue\": \"100.00\", \"unit\": \"INR_CRORE\", \"pageNumber\": 6, \"verbatimQuote\": \"Average Annual Turnover from ERP & similar work in last three (3) financial years ending 31.03.2019 should be minimum INR 100 Crores per year and Net-Worth should be positive as on 31.03.2019\"}, {\"clauseType\": \"NET_WORTH\", \"comparator\": \"MIN_REQUIRED\", \"rawValue\": \"1.00\", \"unit\": \"INR_CRORE\", \"pageNumber\": 6, \"verbatimQuote\": \"Net-Worth should be positive as on 31.03.2019\"}, {\"clauseType\": \"PAST_EXPERIENCE\", \"comparator\": \"MIN_REQUIRED\", \"rawValue\": \"2\", \"unit\": \"PROJECTS\", \"pageNumber\": 6, \"verbatimQuote\": \"The bidder should have implemented at least 2 (Two) Educational ERP system for the University in India involving support, maintenance and services also.\"}, {\"clauseType\": \"ISO_CERTIFICATION\", \"comparator\": \"REQUIRED_SET\", \"rawValue\": \"ISO/IEC 27001\", \"unit\": \"BOOLEAN\", \"pageNumber\": 6, \"verbatimQuote\": \"The bidder must have at least valid ISO/IEC 27001 certificate for software standards and at least CMMi level 3 certification for Software  Design, Development & Testing\"}, {\"clauseType\": \"EARNEST_MONEY_DEPOSIT\", \"comparator\": \"MAX_ALLOWED\", \"rawValue\": \"4.50\", \"unit\": \"INR_LAKH\", \"pageNumber\": 6, \"verbatimQuote\": \"Earnest Money Deposit (EMD) of INR 4.50 Lakhs shall be submitted via BG/DD.\"}, {\"clauseType\": \"LIQUIDATED_DAMAGES\", \"comparator\": \"MAX_ALLOWED\", \"rawValue\": \"10.00\", \"unit\": \"PERCENT\", \"pageNumber\": 6, \"verbatimQuote\": \"Liquidated damages for delayed delivery and SLA breach shall be capped at 10% of total contract value.\"}]}"
       },
       "finish_reason": "stop"
     }
-  ]
+  ],
+  "usage": {
+    "prompt_tokens": 512,
+    "completion_tokens": 285,
+    "total_tokens": 797
+  }
 }
