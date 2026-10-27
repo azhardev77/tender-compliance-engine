@@ -35,7 +35,7 @@ tender:
   ai:
     provider: ${MODEL_PROVIDER:mock}   # 'meta' for live calls, 'mock' for fixture replay
     # Placeholders: confirm base URL and SAM model id against the official Meta Model API docs.
-    base-url: ${META_API_BASE_URL:CONFIRM_FROM_META_DOCS}
+    base-url: ${META_API_BASE_URL:https://api.meta.ai/v1}
     api-key: ${META_API_KEY:replace-me}
     muse-spark-model: ${MUSE_SPARK_MODEL:muse-spark-1.3}
     sam-model: ${SAM_MODEL:CONFIRM_FROM_META_DOCS}

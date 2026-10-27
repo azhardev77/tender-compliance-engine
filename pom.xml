@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.meta</groupId>
+    <groupId>io.github.azhardev77.tenderengine</groupId>
     <artifactId>tender-compliance-engine</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <name>tender-compliance-engine</name>

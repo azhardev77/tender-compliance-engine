@@ -1,0 +1,15 @@
+{
+  "id": "chatcmpl-spark-erp-p6",
+  "object": "chat.completion",
+  "model": "muse-spark-1.3",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"tender_id\":\"ERP-PROC-2026-08\",\"page_number\":6,\"extracted_clauses\":[{\"clause_code\":\"FIN_TURNOVER\",\"clause_title\":\"Minimum Annual Turnover\",\"text_verbatim\":\"The bidder must have an average annual financial turnover of at least INR 5.00 Crores over the last 3 financial years.\",\"standard_category\":\"FINANCIAL_TURNOVER\",\"comparator\":\"MIN_REQUIRED\",\"numeric_threshold\":5.00,\"unit\":\"INR_CRORE\"},{\"clause_code\":\"EMD_REQ\",\"clause_title\":\"Earnest Money Deposit\",\"text_verbatim\":\"Earnest Money Deposit (EMD) of INR 4.50 Lakhs shall be submitted via BG/DD.\",\"standard_category\":\"EARNEST_MONEY_DEPOSIT\",\"comparator\":\"MAX_ALLOWED\",\"numeric_threshold\":4.50,\"unit\":\"INR_LAKH\"},{\"clause_code\":\"EXP_GOV\",\"clause_title\":\"Government PSU Experience\",\"text_verbatim\":\"Bidder must possess at least 3 years of prior experience in implementing enterprise ERP solutions for Central/State Government PSUs.\",\"standard_category\":\"PAST_EXPERIENCE\",\"comparator\":\"MIN_REQUIRED\",\"numeric_threshold\":3.00,\"unit\":\"YEARS\"},{\"clause_code\":\"ISO_QUALITY\",\"clause_title\":\"Quality Standards Certification\",\"text_verbatim\":\"Bidder must hold valid ISO 9001:2015 and ISO/IEC 27001:2022 certifications as on bid submission date.\",\"standard_category\":\"ISO_CERTIFICATION\",\"comparator\":\"REQUIRED_SET\",\"numeric_threshold\":null,\"unit\":\"BOOLEAN\"}]}"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}
