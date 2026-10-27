@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: tender-compliance-engine
+  threads:
+    virtual:
+      enabled: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 210MB
+      file-size-threshold: 2MB
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:tender_engine}
+    username: ${DB_USER:tender_app}
+    password: ${DB_PASSWORD:tender_local_dev}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+tender:
+  engine:
+    pdf-worker-threads: 4
+    raster-max-concurrent-pages: 4
+    raster-dpi: 175
+    standards-version: 1
+    prompt-version: "v1.0"
+  ai:
+    provider: ${MODEL_PROVIDER:mock}   # 'meta' for live calls, 'mock' for fixture replay
+    # Placeholders: confirm base URL and SAM model id against the official Meta Model API docs.
+    base-url: ${META_API_BASE_URL:CONFIRM_FROM_META_DOCS}
+    api-key: ${META_API_KEY:replace-me}
+    muse-spark-model: ${MUSE_SPARK_MODEL:muse-spark-1.3}
+    sam-model: ${SAM_MODEL:CONFIRM_FROM_META_DOCS}
+    connect-timeout-ms: 5000
+    read-timeout-ms: 90000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
